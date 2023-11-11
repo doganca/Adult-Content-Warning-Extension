@@ -49,7 +49,7 @@ Once installed:
 
 ### Test Scenario: Visiting an Adult Content Site
 
-1. Navigate to a known adult content site (e.g., `www.xvideos.com`).
+1. Navigate to a known adult content site (e.g., `[www.xvideos.com](https://www.xvideos.com/)`).
 2. Upon loading, the extension should detect the RTA meta tag.
 3. An overlay with the warning message should appear.
 4. Test both options:
