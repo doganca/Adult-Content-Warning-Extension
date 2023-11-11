@@ -64,7 +64,7 @@ Please note: This test is provided for demonstration purposes and should be cond
 
 While the extension is effective in detecting adult content on websites that use the RTA (Restricted to Adults) meta tag, it has certain limitations:
 
-- **Non-RTA Tagged Sites:** Some adult websites may not use the RTA meta tag. For instance, sites like `[noodlemagazine.com](https://noodlemagazine.com/new-video)` and `[xdosse.com](https://xdosse.com/)`, despite containing adult content, do not have this tag. Consequently, the extension will not identify these sites as adult content providers, leading to a potential under-filtering issue.
+- **Non-RTA Tagged Sites:** Some adult websites may not use the RTA meta tag. For instance, sites like !!🔞 [noodlemagazine.com](https://noodlemagazine.com/new-video) and 🔞!! [xdosse.com](https://xdosse.com/), despite containing adult content, do not have this tag. Consequently, the extension will not identify these sites as adult content providers, leading to a potential under-filtering issue.
 - **Reliance on Meta Tags:** The extension's current method relies solely on the presence of meta tags, which is not a comprehensive approach to content detection. Websites can contain adult content without necessarily using the RTA tag or similar identifiers.
 
 ### Planned Improvements
