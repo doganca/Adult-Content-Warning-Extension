@@ -58,16 +58,6 @@ Once installed:
 
 Please note: This test is provided for demonstration purposes and should be conducted in a controlled, private, and appropriate environment.
 
-## Contributing
-
-Feel free to contribute to this project:
-
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/AmazingFeature`).
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`).
-4. Push to the branch (`git push origin feature/AmazingFeature`).
-5. Open a pull request.
-
 ## License
 
 Distributed under the MIT License. 
