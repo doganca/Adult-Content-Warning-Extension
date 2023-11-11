@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adult Content Warning Extension Wiki</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the Adult Content Warning Extension Wiki!</h1>
+    </header>
+
+    <main>
+        <section id="installation">
+            <h2>Installation</h2>
+            <p>Follow these steps to install the Adult Content Warning Extension:</p>
+            <ol>
+                <li>Download the Extension: Clone or download the extension files from our <a href="https://github.com/doganca/adult-content-warning-extension">GitHub repository</a>.</li>
+                <li>Load the Extension in Chrome:
+                    <ul>
+                        <li>Open Chrome and navigate to <code>chrome://extensions/</code>.</li>
+                        <li>Enable Developer Mode.</li>
+                        <li>Click "Load unpacked" and select the downloaded extension directory.</li>
+                    </ul>
+                </li>
+                <li>Confirm Installation: The extension should now be active in Chrome.</li>
+            </ol>
+        </section>
+
+        <section id="usage">
+            <h2>Usage</h2>
+            <p>After installing the extension, it will automatically scan each website you visit. If it detects the RTA meta tag, indicating adult content, it will display an overlay with a warning message. You can choose to continue on the site or be redirected to <a href="https://google.com">Google</a>.</p>
+        </section>
+
+        <section id="code">
+            <h2>Code Explanation</h2>
+      
+            <pre><code>// Listen for the DOMContentLoaded event, which fires when the page is fully loaded
+document.addEventListener('DOMContentLoaded', function () {
+    // Query for the RTA meta tag
+    var isAdultContent = document.querySelector("meta[name='rating']");
+
+    // Check if the RTA meta tag exists and its content value
+    if (isAdultContent && isAdultContent.content === 'RTA-5042-1996-1400-1577-RTA') {
+        // Change the background color to black
+        document.body.style.backgroundColor = 'black';
+
+        // Create an overlay div element
+        var overlay = document.createElement('div');
+        overlay.style.position = 'fixed';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.height = '100%';
+        overlay.style.width = '100%';
+        overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+        overlay.style.zIndex = '1000';
+        overlay.style.display = 'flex';
+        overlay.style.justifyContent = 'center';
+        overlay.style.alignItems = 'center';
+        document.body.appendChild(overlay);
+
+        // Create a div for the warning message
+        var warningMessage = document.createElement('div');
+        warningMessage.innerText = 'This site contains adult content. Do you wish to proceed?';
+        warningMessage.style.color = 'white';
+        warningMessage.style.fontSize = '30px';
+        warningMessage.style.textAlign = 'center';
+        warningMessage.style.marginBottom = '20px';
+        overlay.appendChild(warningMessage);
+
+        // Create 'Yes' button
+        var yesButton = document.createElement('button');
+        yesButton.innerText = 'Yes';
+        yesButton.style.fontSize = '20px';
+        yesButton.style.marginRight = '10px';
+        yesButton.onclick = function () {
+            overlay.style.display = 'none'; // Hide overlay on click
+        };
+        overlay.appendChild(yesButton);
+
+        // Create 'No' button
+        var noButton = document.createElement('button');
+        noButton.innerText = 'No';
+        noButton.style.fontSize = '20px';
+        noButton.onclick = function () {
+            window.location.href = 'https://www.google.com'; // Redirect to Google on click
+        };
+        overlay.appendChild(noButton);
+    }
+});</code></pre>
+        </section>
+
+        <section id="limitations">
+            <h2>Limitations and Future Improvements</h2>
+            <p>Current limitations of the extension include:</p>
+            <ul>
+                <li><strong>Non-RTA Tagged Sites:</strong> The extension may not detect adult content on sites without the RTA meta tag, such as <a href="https://noodlemagazine.com">noodlemagazine.com</a> and <a href="https://xdosse.com">xdosse.com</a>.</li>
+                <li><strong>Reliance on Meta Tags:</strong> Currently, detection is based solely on the presence of meta tags.</li>
+            </ul>
+            <p>Planned improvements include:</p>
+            <ul>
+                <li><strong>Advanced Page Analysis:</strong> Implementing AI or machine learning for better content detection.</li>
+                <li><strong>User Feedback System:</strong> Allowing users to report undetected adult content sites.</li>
+                <li><strong>Custom Blacklist/Whitelist:</strong> Enabling users to manually add or block sites.</li>
+            </ul>
+        </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <dl>
+                <dt><strong>Q: Does the extension block adult content?</strong></dt>
+                <dd>A: No, it does not block content. It merely warns the user and offers a choice to proceed or redirect.</dd>
+                <dt><strong>Q: Can I contribute to the project?</strong></dt>
+                <dd>A: Absolutely! Contributions are welcome. You can fork the repository, make changes, and submit a pull request.</dd>
+                <dt><strong>Q: Will the extension work on all websites?</strong></dt>
+                <dd>A: The extension works on sites that use the RTA meta tag. Its effectiveness on sites without this tag is limited.</dd>
+            </dl>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Adult Content Warning Extension Wiki</p>
+    </footer>
+</body>
+</html>
