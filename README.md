@@ -58,6 +58,24 @@ Once installed:
 
 Please note: This test is provided for demonstration purposes and should be conducted in a controlled, private, and appropriate environment.
 
+## Limitations and Future Improvements
+
+### Current Limitations
+
+While the extension is effective in detecting adult content on websites that use the RTA (Restricted to Adults) meta tag, it has certain limitations:
+
+- **Non-RTA Tagged Sites:** Some adult websites may not use the RTA meta tag. For instance, sites like `[noodlemagazine.com](https://noodlemagazine.com/new-video)` and `[xdosse.com](https://xdosse.com/)`, despite containing adult content, do not have this tag. Consequently, the extension will not identify these sites as adult content providers, leading to a potential under-filtering issue.
+- **Reliance on Meta Tags:** The extension's current method relies solely on the presence of meta tags, which is not a comprehensive approach to content detection. Websites can contain adult content without necessarily using the RTA tag or similar identifiers.
+
+### Planned Improvements
+
+To address these limitations, the following improvements are planned for future versions of the extension:
+
+- **Advanced Page Analysis:** Implementing a more sophisticated content analysis system, possibly using AI or machine learning algorithms, to detect adult content based on site characteristics beyond just meta tags.
+- **User Feedback System:** Introducing a feature where users can report a site that contains adult content but is not detected by the extension. This feedback can be used to improve the detection algorithm.
+- **Custom Blacklist/Whitelist:** Allowing users to manually add websites to a blacklist (to be blocked) or a whitelist (to be allowed), providing more control over the content filtering process.
+
+
 ## License
 
 Distributed under the MIT License. 
