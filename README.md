@@ -23,10 +23,16 @@ To install this extension:
 ## File Structure
 
 adult-content-warning-extension/
+
+
 ├── images/
+
 │   └── icon.png         # Extension icon
+
 ├── content/
+
 │   └── content.js       # Content script
+
 └── manifest.json        # Extension manifest file
 
 
